@@ -8,11 +8,13 @@ public class PlayerShoot : MonoBehaviour
 	private float coolDown = 1f;
 	[SerializeField]
 	private GameObject bullet_prefab;
-	private float forceOfShoot = 3f;
+	private float forceOfShoot = 6f;
+	
+	private Animator _anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _anim = gameObject.GetComponent<Animator>();
     }
 	//depending on the arrows it will shoot a projetile prefab in that direction
 	void Shoot(){
@@ -29,6 +31,18 @@ public class PlayerShoot : MonoBehaviour
 		else if(Input.GetKeyDown(KeyCode.DownArrow)) vertical = -1;
 		
 		if(horizontal != 0 || vertical != 0){
+			
+			//if you have horizontal and vertical choose horizontal
+			if(horizontal != 0 && vertical != 0){
+				_anim.SetFloat("Horizontal",Mathf.Abs(horizontal));
+				_anim.SetFloat("Vertical",0);
+			}
+			else{
+			_anim.SetFloat("Horizontal",Mathf.Abs(horizontal));
+			_anim.SetFloat("Vertical",vertical);
+			}
+			FlipChar(horizontal);
+			
 			Vector3 directionOfShoot = new Vector3(horizontal,vertical,0);
 			GameObject _bullet = Instantiate(bullet_prefab,transform.position + directionOfShoot*1.5f,transform.rotation);//create projetile in the position of the player
 			
@@ -36,6 +50,12 @@ public class PlayerShoot : MonoBehaviour
 			_bullet.AddComponent<BulletMovement>().SetBulletDirection(directionOfShoot);
 
 		}
+	}
+	//Flip char in case of it going right
+	 void FlipChar(float horizontal){
+		//If horizontal is greater or lower than zero i flip the char
+		bool result =  (horizontal>0 && horizontal!=0) ? true : false;
+		GetComponent<SpriteRenderer>().flipX = result;
 	}
     // Update is called once per frame
     void Update()

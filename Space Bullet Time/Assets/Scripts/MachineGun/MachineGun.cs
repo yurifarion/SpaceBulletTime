@@ -38,7 +38,7 @@ public class MachineGun : MonoBehaviour
 			GameObject _bullet = Instantiate(bullet_prefab,transform.position + shootDirection*1.5f,transform.rotation);//create projetile in the position of the player
 			//Add the main class to control the movement of the bullet and set it to the current Direction
 			_bullet.AddComponent<BulletMovement>().SetBulletDirection(shootDirection);
-			Debug.Log("Shoot");
+			
 		 }
 	 }
     // Update is called once per frame
