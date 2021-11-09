@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 			_anim.speed = 1;
 			
 			
-			_timemanager.SetBulletTime(1f);
+			_timemanager.SetBulletTime(1.3f);
 			Vector3 movement = new Vector3(horizontal,vertical,0);//Create Vector to be applied to the CharacterController
 			_charController.Move(movement * Time.deltaTime * speed);
 		}

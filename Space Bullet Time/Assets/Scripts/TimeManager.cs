@@ -23,10 +23,13 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
         // the minimum of the Bullet time will always be minimum
 		if(bulletTime > minimumBulletTime){
 			bulletTime -= bulletTimeDecrease;//decrease the bullet time per frame so it stops moving after a time the player moves
 		}
 		else bulletTime = minimumBulletTime;
+		
+		
     }
 }

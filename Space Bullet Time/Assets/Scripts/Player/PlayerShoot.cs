@@ -44,10 +44,10 @@ public class PlayerShoot : MonoBehaviour
 			FlipChar(horizontal);
 			
 			Vector3 directionOfShoot = new Vector3(horizontal,vertical,0);
-			GameObject _bullet = Instantiate(bullet_prefab,transform.position + directionOfShoot*1.5f,transform.rotation);//create projetile in the position of the player
+			GameObject _bullet = Instantiate(bullet_prefab,transform.position + directionOfShoot*2f,transform.rotation);//create projetile in the position of the player
 			
 			//Add the main class to control the movement of the bullet and set it to the current Direction
-			_bullet.AddComponent<BulletMovement>().SetBulletDirection(directionOfShoot);
+			_bullet.GetComponent<BulletMovement>().SetBulletDirection(directionOfShoot);
 
 		}
 	}
