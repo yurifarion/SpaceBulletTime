@@ -13,9 +13,6 @@ public class SeedCreator : MonoBehaviour
 		
 		Random.InitState(seed);//Set the procedual random from seed
     }
-	void Start(){
-		//Test procedual
-		Debug.Log("a="+Random.Range(0,10002302)+"b="+Random.Range(0,2)+"c="+Random.Range(2,594059));
-	}
+	
 
 }
