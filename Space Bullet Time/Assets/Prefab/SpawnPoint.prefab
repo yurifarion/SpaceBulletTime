@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openingDirection: 0
+  spawned: 0
+  uCorridor: {fileID: 8696698922320839592, guid: dad60de93a21c184a836003c7c6fd0a9, type: 3}
+  dCorridor: {fileID: 3304648247602221666, guid: 02eab3c91a2210e48b983fa6ac2a308c, type: 3}
+  leftCorridor: {fileID: 1102595155217455615, guid: f6b799645f129cb4f8303d80ef32aa45, type: 3}
+  rightCorridor: {fileID: 7841020946579535189, guid: 007eb38d6dbc7614bae2edf73eb0eabc, type: 3}
 --- !u!61 &191234121952896040
 BoxCollider2D:
   m_ObjectHideFlags: 0
