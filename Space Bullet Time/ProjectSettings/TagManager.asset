@@ -7,6 +7,7 @@ TagManager:
   - TimeManager
   - SpawnPoint
   - GameManager
+  - Gate
   layers:
   - Default
   - TransparentFX

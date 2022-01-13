@@ -10,7 +10,13 @@ public class RoomManager : MonoBehaviour
 	public GameObject leftRoom;
 	public GameObject rightRoom;
 	
-	//Prefab of rooms that only have one exit, in order to replace the current room with this.
+	//this are all the possible gates that connect to other rooms, the room will only be available if we open a door to it
+	public Gate gateDownRoom;
+	public Gate gateUpRoom;
+	public Gate gateLeftRoom;
+	public Gate gateRightRoom;
+	
+	//Prefab of gate that only have one exit, in order to replace the current room with this.
 	public GameObject downIsolatedRoomPrefab;
 	public GameObject upIsolatedRoomPrefab;
 	public GameObject leftIsolatedRoomPrefab;
@@ -23,6 +29,17 @@ public class RoomManager : MonoBehaviour
         Invoke("CheckConnectedRooms",0.4f);
 	
     }
+	void Update(){
+		//check if one of the gates is openned, if it is it will render the gate to it
+		checkGates();
+	}
+	void checkGates(){
+		//This will check every gate that is available and see if that's openned, if so it will show the room
+		if(gateUpRoom!= null)if(gateUpRoom.isGateOpenned)upRoom.SetActive(true);
+		if(gateDownRoom!= null)if(gateDownRoom.isGateOpenned)downRoom.SetActive(true);
+		if(gateLeftRoom!= null)if(gateLeftRoom.isGateOpenned)leftRoom.SetActive(true);
+		if(gateRightRoom!= null)if(gateRightRoom.isGateOpenned)rightRoom.SetActive(true);
+	}
 	void CheckConnectedRooms(){
 		string typeOfRoom = this.gameObject.name;
 		if(typeOfRoom != "Room AP"){//Room AP is the core room
@@ -52,6 +69,8 @@ public class RoomManager : MonoBehaviour
 						room.GetComponent<RoomManager>().upRoom = upRoom;
 						room.GetComponent<RoomManager>().leftRoom = leftRoom;
 						room.GetComponent<RoomManager>().rightRoom = rightRoom;
+						
+						//room.SetActive(false);//The room will be invisible until you open a door to it.
 				}
 				else if(downRoom != null){
 					room = Instantiate(downIsolatedRoomPrefab,transform.position,transform.rotation);
@@ -60,6 +79,7 @@ public class RoomManager : MonoBehaviour
 						room.GetComponent<RoomManager>().upRoom = upRoom;
 						room.GetComponent<RoomManager>().leftRoom = leftRoom;
 						room.GetComponent<RoomManager>().rightRoom = rightRoom;
+						//room.SetActive(false);//The room will be invisible until you open a door to it.
 				}
 				else if(upRoom != null){
 					room = Instantiate(upIsolatedRoomPrefab,transform.position,transform.rotation);
@@ -68,6 +88,7 @@ public class RoomManager : MonoBehaviour
 						room.GetComponent<RoomManager>().upRoom = upRoom;
 						room.GetComponent<RoomManager>().leftRoom = leftRoom;
 						room.GetComponent<RoomManager>().rightRoom = rightRoom;
+						//room.SetActive(false);//The room will be invisible until you open a door to it.
 				}
 				else if(rightRoom != null){
 						room = Instantiate(rightIsolatedRoomPrefab,transform.position,transform.rotation);
@@ -76,6 +97,7 @@ public class RoomManager : MonoBehaviour
 						room.GetComponent<RoomManager>().upRoom = upRoom;
 						room.GetComponent<RoomManager>().leftRoom = leftRoom;
 						room.GetComponent<RoomManager>().rightRoom = rightRoom;
+						//room.SetActive(false);//The room will be invisible until you open a door to it.
 				}
 						
 						

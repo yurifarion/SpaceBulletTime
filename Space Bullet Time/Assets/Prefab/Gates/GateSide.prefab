@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3986819127313863009}
   - component: {fileID: 3986819127313863014}
   m_Layer: 0
-  m_Name: GateLightClosedTop
+  m_Name: Gate_LightClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3986819127313863008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.069000006, y: 0, z: -0.03}
+  m_LocalPosition: {x: -0.035, y: 0, z: -0.03}
   m_LocalScale: {x: 0.5788166, y: 1, z: 1}
   m_Children:
   - {fileID: 3986819129062299410}
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0abee12eefd4fbb489121d3159345139, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -189,9 +189,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3986819128437000627}
   - component: {fileID: 3986819128437000626}
+  - component: {fileID: 5862405249066833005}
+  - component: {fileID: 3403121126671835655}
+  - component: {fileID: 3698407463389861378}
   m_Layer: 0
   m_Name: GateSide
-  m_TagString: Untagged
+  m_TagString: Gate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -253,7 +256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fde1a1c8ac2ed484bb29ede46b055e03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -265,6 +268,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &5862405249066833005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986819128437000637}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.26022863, y: 0.64000005, z: 0.20000003}
+  m_Center: {x: -0.17850205, y: 0, z: 0}
+--- !u!114 &3403121126671835655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986819128437000637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aa734cfaaae354d9ec1c683fb9db53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGateLocked: 0
+  isGateOpenned: 0
+--- !u!95 &3698407463389861378
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986819128437000637}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d593a95f79494d347a24c2ed6a00cfc4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3986819128547027030
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,12 +325,12 @@ GameObject:
   - component: {fileID: 3986819128547027031}
   - component: {fileID: 3986819128547027028}
   m_Layer: 0
-  m_Name: GateLightOpenTop
+  m_Name: Gate_LightOpen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3986819128547027031
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3986819128547027030}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.069, y: 0, z: -0.03}
+  m_LocalPosition: {x: -0.034999985, y: 0, z: -0.03}
   m_LocalScale: {x: 0.5788166, y: 1, z: 1}
   m_Children:
   - {fileID: 3986819128732148912}
@@ -336,7 +385,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 174fc48874407f94998d8dec16bf29a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
