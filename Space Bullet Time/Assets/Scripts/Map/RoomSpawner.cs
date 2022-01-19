@@ -34,6 +34,7 @@ public class RoomSpawner : MonoBehaviour
 				//Create the connection of the object with each other with RoomManager
 				transform.root.gameObject.GetComponent<RoomManager>().downRoom = room;
 				room.GetComponent<RoomManager>().upRoom = transform.root.gameObject;
+				_roomtemplate.AddRoom(room.GetComponent<RoomManager>());//it will add this room to the List of spawned rooms in Room Template
 				//room.SetActive(false);//The room will be invisible until you open a door to it.
 				
 			}
@@ -44,6 +45,7 @@ public class RoomSpawner : MonoBehaviour
 				//Create the connection of the object with each other with RoomManager
 				transform.root.gameObject.GetComponent<RoomManager>().upRoom = room;
 				room.GetComponent<RoomManager>().downRoom = transform.root.gameObject;
+				_roomtemplate.AddRoom(room.GetComponent<RoomManager>());//it will add this room to the List of spawned rooms in Room Template
 				//room.SetActive(false);//The room will be invisible until you open a door to it.
 				
 			}
@@ -54,6 +56,7 @@ public class RoomSpawner : MonoBehaviour
 				//Create the connection of the object with each other with RoomManager
 				transform.root.gameObject.GetComponent<RoomManager>().leftRoom = room;
 				room.GetComponent<RoomManager>().rightRoom = transform.root.gameObject;
+				_roomtemplate.AddRoom(room.GetComponent<RoomManager>());//it will add this room to the List of spawned rooms in Room Template
 				//room.SetActive(false);//The room will be invisible until you open a door to it.
 				
 			}
@@ -64,6 +67,7 @@ public class RoomSpawner : MonoBehaviour
 				//Create the connection of the object with each other with RoomManager
 				transform.root.gameObject.GetComponent<RoomManager>().rightRoom = room;
 				room.GetComponent<RoomManager>().leftRoom = transform.root.gameObject;
+				_roomtemplate.AddRoom(room.GetComponent<RoomManager>());//it will add this room to the List of spawned rooms in Room Template
 				//room.SetActive(false);//The room will be invisible until you open a door to it.
 			
 			}

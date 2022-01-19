@@ -5847,6 +5847,7 @@ MonoBehaviour:
   - {fileID: 5327688025573624099, guid: c27dee60c919c7c4f8ffeb69a51ad7ea, type: 3}
   - {fileID: 1551225420456555335, guid: 50eab42d2c7ba3740b9c5fcf398f6633, type: 3}
   - {fileID: 7941884006063991012, guid: 3b8c93c3be02c6c419e3884833ec8c37, type: 3}
+  spawnedRooms: []
 --- !u!114 &1943142287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5905,6 +5906,10 @@ PrefabInstance:
       propertyPath: gateRightRoom
       value: 
       objectReference: {fileID: 1956672144}
+    - target: {fileID: 8457757046826240074, guid: c7154c30f6e1aeb4ba2e87c783219056, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8457757048523972764, guid: c7154c30f6e1aeb4ba2e87c783219056, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.7

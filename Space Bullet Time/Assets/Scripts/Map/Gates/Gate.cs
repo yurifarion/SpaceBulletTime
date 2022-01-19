@@ -40,8 +40,7 @@ public class Gate : MonoBehaviour
 		// Does the ray intersect any gate excluding its own gate in down direction
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 10))
         {
-				Debug.Log(gameObject.name+"Boom"+hit.transform.gameObject.name+hit.transform.gameObject.tag);
-			   Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * hit.distance, Color.yellow);
+				
             //it will check if the other gate is open, if it is, it will unlock and open its gate
 			//since it will get the collider of the door of the gate, it will need to access the parente to get to the Class Gate info
 			if(hit.transform.gameObject.tag == "Gate"){// it will get other objects that are not for our interest, so lets filter to what have gate tags
@@ -54,18 +53,14 @@ public class Gate : MonoBehaviour
 			}
 			
         }
-		else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * 1000, Color.white);
-            
-        }
+		
 		 if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.up), out hit, 10))
         {
-			   Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * hit.distance, Color.yellow);
+			  
             //it will check if the other gate is open, if it is, it will unlock and open its gate
 			//since it will get the collider of the door of the gate, it will need to access the parente to get to the Class Gate info
 			if(hit.transform.gameObject.tag == "Gate"){// it will get other objects that are not for our interest, so lets filter to what have gate tags
-				Debug.Log("Boom");
+				
 				if(hit.transform.gameObject.GetComponent<Gate>().isGateOpenned && !isGateOpenned){
 					
 					isGateLocked = false;
@@ -74,11 +69,7 @@ public class Gate : MonoBehaviour
 			}
 			
         }
-		else
-        {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.up) * 1000, Color.white);
-            
-        }
+		
 		
 		
 		
