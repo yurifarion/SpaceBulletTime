@@ -28,9 +28,9 @@ Before starting, make sure you've met the following requirements:
 * Unity 2020,1,6f1
 * This game uses URP for 2D, it's not compatible with HTML5
 
-## 📫 Contributing to <SpaceBulletTime>
+## 📫 Contributing to SpaceBulletTime
 
-To contribute to <SpaceBulletTime>, follow these steps:
+To contribute to SpaceBulletTime, follow these steps:
 
 1. Fork this repository.
 2. Create a branch: `git checkout -b <branch_name>`.
